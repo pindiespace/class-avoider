@@ -1,0 +1,122 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Avoider</title>
+
+		<style>
+
+			/* game styles here */
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<header>
+
+			<h1>Avoider</h1>
+
+		</header>
+
+		<section id="content">
+
+			<div id="arena">
+
+				<div id="critter"></div>
+
+			</div>
+
+		</section>
+
+		<footer>
+
+			<p>&copy; 2017 Vegan Meat market</p>
+
+		</footer>
+
+		<script>
+
+			// Avoider code goes here
+
+			var avoider = ( function () {
+
+				var critter, arena;
+
+				function makeArena () {
+
+					console.log("I'm in makeArena");
+
+					arena = document.getElementById('arena');
+
+					console.log("arena is a:" + arena)
+
+					arena.style.width = "400px";
+
+					arena.style.height = "400px";
+
+					arena.style.border = "2px solid green";
+
+				};
+
+				function makeCritter () {
+
+					console.log("I'm in makeCritter");
+
+					critter = document.getElementById('critter');
+
+					critter.style.width = "50px";
+
+					critter.style.height = "50px";
+
+					critter.style.border = "2px solid red";
+
+					critter.style.backgroundColor = "#343982";
+
+				};
+
+				function checkIfCritterClicked () {
+
+					console.log("I'm in checkIfCritterClicked");
+
+				};
+
+				function gameLoop () {
+
+					checkIfCritterClicked();
+
+					requestAnimationFrame( gameLoop );
+
+				};
+
+				function init () {
+
+					console.log("I'm in init");
+
+					makeArena();
+
+					makeCritter();
+
+					gameLoop();
+
+				};
+
+				return {
+
+					init: init
+
+				};
+
+			} ) ();
+
+
+		</script>
+
+	</body>
+
+</html>
